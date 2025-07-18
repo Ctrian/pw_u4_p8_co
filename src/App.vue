@@ -2,9 +2,12 @@
   <nav>
     <router-link to="/home">Home</router-link> |
     <router-link to="/estudiante">Estudiante</router-link> |
-    <router-link to="/login">Login</router-link>
+    <router-link to="/login">Login</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link to="/notasIngreso">Notas</router-link> |
+    <router-link to="/403">Prohibido</router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
