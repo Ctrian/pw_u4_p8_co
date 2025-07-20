@@ -1,5 +1,21 @@
 import axios from "axios"
 
+// Obtener todos
+/* public Response consultarEstudiantes(@QueryParam("genero") String genero, @QueryParam("provincia") String provincia, @Context UriInfo uriInfo) { */
+const obtenerTodos = async () => {
+    const respuesta = axios.get('http://localhost:8081/api/matricula/v1/estudiantes/?genero=M').then(respuesta => respuesta.data);
+    console.log(respuesta);
+    return respuesta;
+}
+
+// Obtener por ID
+/* public Response consultarEstudiantePorId(@PathParam("id") Integer id, @Context UriInfo uriInfo) { */
+const obtenerPorId = async (id) => {
+    const respuesta = axios.get(`http://localhost:8081/api/matricula/v1/estudiantes/${id}`).then(respuesta => respuesta.data);
+    console.log(respuesta);
+    return respuesta;
+}
+
 // Guardar
 /* public void guardar(@RequestBody EstudianteTo estudianteTo) { */
 const guardar = async (body) => {
@@ -26,6 +42,14 @@ const borrarPorId = async (id) => {
 }
 
 // fachadas
+export const obtenerTodosFachada = async () => {
+    return await obtenerTodos();
+}
+
+export const obtenerPorIdFachada = async (id) => {
+    return await obtenerPorId(id);
+}
+
 export const guardarFachada = async (body) => {
     await guardar(body);
 }

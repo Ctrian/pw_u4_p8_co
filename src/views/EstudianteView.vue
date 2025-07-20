@@ -1,4 +1,5 @@
 <template>
+  <h1>Seleccione la operación a realizar</h1>
   <Estudiante />
 </template>
 
